@@ -20,8 +20,14 @@ lsetup xrootd
 voms-proxy-init -voms atlas
 ```
 or 
-```bash
+Install xrootd precompiled for upp 
+```bash 
+mamba activate upp 
 mamba install -c conda-forge xrootd
+```
+
+Then 
+```bash
 setupATLAS
 lsetup xcache
 voms-proxy-init -voms atlas
