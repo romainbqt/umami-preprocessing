@@ -5,17 +5,17 @@ ttbar: &ttbar
   name: ttbar
   equal_jets: False
   pattern:
-    - "user.alfroch.601589.e8547_s3797_r13144_p6698.tdd.GN3_dev.25_2_48.GN3V01-Training_output.h5/*.h5" # MC20d
-    - "user.alfroch.601589.e8549_s4162_r14622_p6698.tdd.GN3_dev.25_2_48.GN3V01-Training_output.h5/*.h5" # MC23a
-    - "user.alfroch.601589.e8549_s4159_r15530_p6698.tdd.GN3_dev.25_2_48.GN3V01-Training_output.h5/*.h5" # MC23d
+    - "/home/rbouquet/eos/umamiTest/inputs/user.treisch.601589.e8547_s3797_r13144_p7085.tdd.GN3_dev.25_2_76.26-01-07_CentralDump_p7085_output.h5/*.h5" # MC20d
+    # - "user.alfroch.601589.e8549_s4162_r14622_p6698.tdd.GN3_dev.25_2_48.GN3V01-Training_output.h5/*.h5" # MC23a
+    # - "user.alfroch.601589.e8549_s4159_r15530_p6698.tdd.GN3_dev.25_2_48.GN3V01-Training_output.h5/*.h5" # MC23d
 
-zprime: &zprime
-  name: zprime
-  equal_jets: False
-  pattern:
-    - "user.alfroch.800030.e7954_s3797_r13144_p6698.tdd.GN3_dev.25_2_48.GN3V01-Training_output.h5/*.h5" # MC20d
-    - "user.alfroch.800030.e8514_s4162_r14622_p6698.tdd.GN3_dev.25_2_48.GN3V01-Training_output.h5/*.h5" # MC23a
-    - "user.alfroch.800030.e8514_s4159_r15530_p6698.tdd.GN3_dev.25_2_48.GN3V01-Training_output.h5/*.h5" # MC23d
+# zprime: &zprime
+#   name: zprime
+#   equal_jets: False
+#   pattern:
+#     - "user.alfroch.800030.e7954_s3797_r13144_p6698.tdd.GN3_dev.25_2_48.GN3V01-Training_output.h5/*.h5" # MC20d
+#     - "user.alfroch.800030.e8514_s4162_r14622_p6698.tdd.GN3_dev.25_2_48.GN3V01-Training_output.h5/*.h5" # MC23a
+#     - "user.alfroch.800030.e8514_s4159_r15530_p6698.tdd.GN3_dev.25_2_48.GN3V01-Training_output.h5/*.h5" # MC23d
 
 lowpt: &lowpt
   name: lowpt
@@ -77,53 +77,53 @@ components:
     num_jets: 11_000_000
     num_jets_test: 500_000
 
-  - region:
-      <<: *highpt
-    sample:
-      <<: *zprime
-    flavours: [ghostbjets]
-    num_jets: 50_000_000
-    num_jets_test: 2_000_000
+  # - region:
+  #     <<: *highpt
+  #   sample:
+  #     <<: *zprime
+  #   flavours: [ghostbjets]
+  #   num_jets: 50_000_000
+  #   num_jets_test: 2_000_000
 
-  - region:
-      <<: *highpt
-    sample:
-      <<: *zprime
-    flavours: [ghostcjets]
-    num_jets: 13_750_000
-    num_jets_test: 2_000_000
+  # - region:
+  #     <<: *highpt
+  #   sample:
+  #     <<: *zprime
+  #   flavours: [ghostcjets]
+  #   num_jets: 13_750_000
+  #   num_jets_test: 2_000_000
 
-  - region:
-      <<: *highpt
-    sample:
-      <<: *zprime
-    flavours: [ghostsjets]
-    num_jets: 10_000_000
-    num_jets_test: 1_000_000
+  # - region:
+  #     <<: *highpt
+  #   sample:
+  #     <<: *zprime
+  #   flavours: [ghostsjets]
+  #   num_jets: 10_000_000
+  #   num_jets_test: 1_000_000
 
-  - region:
-      <<: *highpt
-    sample:
-      <<: *zprime
-    flavours: [ghostudjets]
-    num_jets: 27_500_000
-    num_jets_test: 1_000_000
+  # - region:
+  #     <<: *highpt
+  #   sample:
+  #     <<: *zprime
+  #   flavours: [ghostudjets]
+  #   num_jets: 27_500_000
+  #   num_jets_test: 1_000_000
 
-  - region:
-      <<: *highpt
-    sample:
-      <<: *zprime
-    flavours: [ghostgjets]
-    num_jets: 32_500_000
-    num_jets_test: 1_000_000
+  # - region:
+  #     <<: *highpt
+  #   sample:
+  #     <<: *zprime
+  #   flavours: [ghostgjets]
+  #   num_jets: 32_500_000
+  #   num_jets_test: 1_000_000
 
-  - region:
-      <<: *highpt
-    sample:
-      <<: *zprime
-    flavours: [ghosttaujets]
-    num_jets: 5_500_000
-    num_jets_test: 200_000
+  # - region:
+  #     <<: *highpt
+  #   sample:
+  #     <<: *zprime
+  #   flavours: [ghosttaujets]
+  #   num_jets: 5_500_000
+  #   num_jets_test: 200_000
 
 resampling:
   target: ghostcjets
