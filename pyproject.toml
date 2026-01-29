@@ -16,6 +16,8 @@ dependencies = [
   "PyYAML>=6.0.2",
   "rich>=14.1.0",
   "scipy>=1.15.3",
+  "fsspec>=2026.1.0",
+  "fsspec-xrootd>=0.5.2"
 ]
 
 [project.optional-dependencies]
