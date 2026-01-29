@@ -17,7 +17,8 @@ dependencies = [
   "rich>=14.1.0",
   "scipy>=1.15.3",
   "fsspec>=2026.1.0",
-  "fsspec-xrootd>=0.5.2"
+  "fsspec-xrootd>=0.5.2",
+  "webdav4>=0.10.0"
 ]
 
 [project.optional-dependencies]
