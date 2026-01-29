@@ -12,15 +12,17 @@ It addresses [several issues](https://gitlab.cern.ch/atlas-flavor-tagging-tools/
 Documentation is found [here](https://umami-hep.github.io/umami-preprocessing/)
 
 
+NB: `lsetup xcache` does not setup python module `XRootD` while `lsetup xcache` does. 
+
 ```bash
 setupATLAS
 lsetup xrootd
 voms-proxy-init -voms atlas
 ```
-
 or 
 ```bash
 mamba install -c conda-forge xrootd
 setupATLAS
+lsetup xcache
 voms-proxy-init -voms atlas
 ```
