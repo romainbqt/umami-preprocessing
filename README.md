@@ -32,3 +32,10 @@ setupATLAS
 lsetup xcache
 voms-proxy-init -voms atlas
 ```
+
+The error otherwise being 
+```
+File "/auto_home/users/rbouquet/miniforge3/envs/upp/lib/python3.11/site-packages/fsspec_xrootd/xrootd.py", line 18, in <module>
+    from XRootD import client
+ModuleNotFoundError: No module named 'XRootD'
+```
