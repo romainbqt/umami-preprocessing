@@ -5,7 +5,7 @@ ttbar: &ttbar
   name: ttbar
   equal_jets: False
   pattern:
-    - "/home/rbouquet/eos/umamiTest/inputs/user.treisch.601589.e8547_s3797_r13144_p7085.tdd.GN3_dev.25_2_76.26-01-07_CentralDump_p7085_output.h5/*.h5" # MC20d
+    - "/home/rbouquet/eos/umamiTest/inputs/user.treisch.601589.e8547_s3797_r13144_p7085.tdd.GN3_dev.25_2_76.26-01-07_CentralDump_p7085_output.h5/user.treisch.48141599._000042.output.h5" # MC20d
     # - "user.alfroch.601589.e8549_s4162_r14622_p6698.tdd.GN3_dev.25_2_48.GN3V01-Training_output.h5/*.h5" # MC23a
     # - "user.alfroch.601589.e8549_s4159_r15530_p6698.tdd.GN3_dev.25_2_48.GN3V01-Training_output.h5/*.h5" # MC23d
 
