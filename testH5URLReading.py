@@ -21,3 +21,6 @@ if url.startswith("davs://"):
 with fsspec.open(url, "rb") as f:
   with h5py.File(f, 'r') as hf:
     print(list(hf.keys()))
+    
+    
+    # print(type(hf) == h5py.File)
