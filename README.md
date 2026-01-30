@@ -22,6 +22,11 @@ Documentation is found [here](https://umami-hep.github.io/umami-preprocessing/)
 
 ### Just to recall things 
 
+```
+rucio list-file-replicas --rses IN2P3-CC_LOCALGROUPDISK --protocol root \
+  user.treisch:user.treisch.601589.e8547_s3797_r13144_p7085.tdd.GN3_dev.25_2_76.26-01-07_CentralDump_p7085_output.h5 \
+  | awk '$2 ~ /^user\./ { print $12 }'
+```
 
 
 
