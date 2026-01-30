@@ -5,7 +5,7 @@ ttbar: &ttbar
   name: ttbar
   equal_jets: False
   pattern:
-    - "/home/rbouquet/eos/umamiTest/inputs/user.treisch.601589.e8547_s3797_r13144_p7085.tdd.GN3_dev.25_2_76.26-01-07_CentralDump_p7085_output.h5/user.treisch.48141599._000042.output.h5" # MC20d
+    - "user.treisch.601589.e8547_s3797_r13144_p7085.tdd.GN3_dev.25_2_76.26-01-07_CentralDump_p7085_output.h5/user.treisch.48141599._000042.output.h5" # MC20d
     # - "user.alfroch.601589.e8549_s4162_r14622_p6698.tdd.GN3_dev.25_2_48.GN3V01-Training_output.h5/*.h5" # MC23a
     # - "user.alfroch.601589.e8549_s4159_r15530_p6698.tdd.GN3_dev.25_2_48.GN3V01-Training_output.h5/*.h5" # MC23d
 
@@ -34,48 +34,48 @@ components:
     sample:
       <<: *ttbar
     flavours: [ghostbjets]
-    num_jets: 100_000_000
-    num_jets_test: 2_000_000
+    num_jets: 10_000
+    num_jets_test: 10_000
 
   - region:
       <<: *lowpt
     sample:
       <<: *ttbar
     flavours: [ghostcjets]
-    num_jets: 27_500_000
-    num_jets_test: 2_000_000
+    num_jets: 10_000
+    num_jets_test: 10_000
 
   - region:
       <<: *lowpt
     sample:
       <<: *ttbar
     flavours: [ghostsjets]
-    num_jets: 20_000_000
-    num_jets_test: 1_000_000
+    num_jets: 10_000
+    num_jets_test: 10_000
 
   - region:
       <<: *lowpt
     sample:
       <<: *ttbar
     flavours: [ghostudjets]
-    num_jets: 55_000_000
-    num_jets_test: 1_000_000
+    num_jets: 10_000
+    num_jets_test: 10_000
 
   - region:
       <<: *lowpt
     sample:
       <<: *ttbar
     flavours: [ghostgjets]
-    num_jets: 65_000_000
-    num_jets_test: 1_000_000
+    num_jets: 10_000
+    num_jets_test: 10_000
 
   - region:
       <<: *lowpt
     sample:
       <<: *ttbar
     flavours: [ghosttaujets]
-    num_jets: 11_000_000
-    num_jets_test: 500_000
+    num_jets: 10_000
+    num_jets_test: 10_000
 
   # - region:
   #     <<: *highpt
@@ -139,6 +139,6 @@ resampling:
 global:
   jets_name: jets
   batch_size: 1_000_000
-  num_jets_estimate: 25_000_000
-  base_dir: GN3V01_Training_preprocessed/
-  ntuple_dir: GN3V01_Training_h5/
+  num_jets_estimate: 10_000
+  base_dir: /home/rbouquet/eos/umamiTest/inputs/
+  ntuple_dir: /home/rbouquet/eos/umamiTest/inputs/
