@@ -205,7 +205,8 @@ def run_input_sample_check(
 
             else:
                 entry_name = sample
-
+            
+            print("Here")
             # Create the H5 reader for each sample and read the number of jets from it
             sample_list[entry_name] = H5Reader(
                 fname=config.ntuple_dir / sample,

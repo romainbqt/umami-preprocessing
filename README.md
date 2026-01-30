@@ -38,6 +38,11 @@ mamba activate upp
 python -m pip install -e .[dev]
 ```
 
+```bash
+pip install -e /home/rbouquet/eos/umamiTest/atlas-ftag-tools
+pip install -e /home/rbouquet/eos/umamiTest/puma
+```
+
 * Introduced the `environment.yml` file related to the setup below 
 
 
