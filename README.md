@@ -22,8 +22,16 @@ Documentation is found [here](https://umami-hep.github.io/umami-preprocessing/)
 
 ### Just to recall things 
 
+
+
+
 * Introduced the `environment.yml` file related to the setup below 
 
+
+```bash
+cd upp
+preprocess --config configs/GN3V01/GN3V01.yaml --prep --resample
+```
 
 #### Related changes 
 
@@ -55,3 +63,5 @@ File "/auto_home/users/rbouquet/miniforge3/envs/upp/lib/python3.11/site-packages
     from XRootD import client
 ModuleNotFoundError: No module named 'XRootD'
 ```
+
+
