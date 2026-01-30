@@ -140,5 +140,5 @@ global:
   jets_name: jets
   batch_size: 1_000_000
   num_jets_estimate: 10_000
-  base_dir: /home/rbouquet/eos/umamiTest/inputs/
-  ntuple_dir: /home/rbouquet/eos/umamiTest/outputs_v2
+  base_dir: /home/rbouquet/eos/umamiTest/outputs_v2
+  ntuple_dir: /home/rbouquet/eos/umamiTest/inputs
