@@ -30,6 +30,13 @@ rucio list-file-replicas --rses IN2P3-CC_LOCALGROUPDISK --protocol root ${CONTAI
 ```
 
 
+# Install 
+
+```bash 
+mamba env create -f environment.yml
+mamba activate upp
+python -m pip install -e .[dev]
+```
 
 * Introduced the `environment.yml` file related to the setup below 
 
@@ -42,6 +49,7 @@ preprocess --config configs/GN3V01/GN3V01.yaml --prep --resample
 #### Related changes 
 
 
+Those are more low level installation than mentionned above 
 NB: `lsetup xcache` does not setup python module `XRootD` while `lsetup xcache` does. 
 
 ```bash
