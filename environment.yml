@@ -1,0 +1,6 @@
+name: upp
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - xrootd>=5.9.1

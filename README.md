@@ -12,6 +12,22 @@ It addresses [several issues](https://gitlab.cern.ch/atlas-flavor-tagging-tools/
 Documentation is found [here](https://umami-hep.github.io/umami-preprocessing/)
 
 
+
+
+
+
+
+
+
+
+### Just to recall things 
+
+* Introduced the `environment.yml` file related to the setup below 
+
+
+#### Related changes 
+
+
 NB: `lsetup xcache` does not setup python module `XRootD` while `lsetup xcache` does. 
 
 ```bash
