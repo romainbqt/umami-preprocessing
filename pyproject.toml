@@ -11,7 +11,7 @@ dependencies = [
   "atlas-ftag-tools@file:///home/rbouquet/eos/umamiTest/atlas-ftag-tools",
   "dotmap>=1.3.30",
   "numpy>=2.2.6",
-  "puma-hep==0.4.11",
+  "puma-hep@file:///home/rbouquet/eos/umamiTest/puma",
   "pyyaml-include==1.3",
   "PyYAML>=6.0.2",
   "rich>=14.1.0",
