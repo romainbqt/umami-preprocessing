@@ -103,21 +103,21 @@ def aggregate_cutbookkeeper(
         Dict with the accumulated cutBookkeeper groups. If the cut bookkeeper
         is not in the files, return None.
     """
-    if any(group_name not in h5py.File(f, "r") for f in fnames):
+    if any(group_name not in getH5File(f) for f in fnames):
         return None
 
     subgroups = check_subgroups(fnames, group_name=group_name)
 
     # initialise an accumulator per subgroup (dtype taken from 1st file)
     accum: dict[str, np.ndarray] = {}
-    with h5py.File(fnames[0], "r") as f0:
+    with getH5File(fnames[0]) as f0:
         for sg in subgroups:
             dtype = f0[f"{group_name}/{sg}/counts"].dtype
             accum[sg] = np.zeros((), dtype=dtype)
 
     # add each files contribution field-wise
     for fname in fnames:
-        with h5py.File(fname, "r") as f:
+        with getH5File(fname) as f:
             for sg in subgroups:
                 per_file = sum_counts_once(f[f"{group_name}/{sg}/counts"][()])
                 for fld in accum[sg].dtype.names:
