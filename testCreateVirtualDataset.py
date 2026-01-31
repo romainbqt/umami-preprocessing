@@ -36,7 +36,7 @@ def main():
   # ]
   
   fnames = [
-      "davs://grid03.ge.infn.it:8443/webdav/atlaslocalgroupdisk/rucio/user/treisch/26/21/user.treisch.48141599._000001.output.h5 ",
+      "davs://grid03.ge.infn.it:8443/webdav/atlaslocalgroupdisk/rucio/user/treisch/26/21/user.treisch.48141599._000001.output.h5",
       "davs://grid03.ge.infn.it:8443/webdav/atlaslocalgroupdisk/rucio/user/treisch/6b/2e/user.treisch.48141599._000002.output.h5"
   ]
   
