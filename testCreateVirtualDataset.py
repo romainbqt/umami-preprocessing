@@ -12,7 +12,6 @@ def getH5File(fileName):
     # Replace "davs://" by "https://"
     fileName = "https://" + fileName[len("davs://"):]
 
-
   if isRemoteFile: 
     # Open via protocol hence using fsspec 
     f = fsspec.open(fileName, "rb", block_size=8 * 1024 * 1024,
@@ -70,7 +69,6 @@ def main():
   with h5py.File(out_fname, "w") as fout:
       # Build "standard" groups
       for gname in sorted(common_groups):
-          print(gname)
           layout = get_virtual_layout(fnames, gname)
           fout.create_virtual_dataset(gname, layout)
 
