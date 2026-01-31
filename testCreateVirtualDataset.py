@@ -210,7 +210,24 @@ def check_subgroups(fnames: list[str], group_name: str = "cutBookkeeper") -> lis
         raise ValueError("No common cutBookkeeper sub-groups with 'counts' found")
     return sorted(common)
 
+def sum_counts_once(counts: np.ndarray) -> np.ndarray:
+    """Reduce the arrays in the counts dataset for one file to a scalar via summation.
 
+    Parameters
+    ----------
+    counts : np.ndarray
+        Array from the h5py dataset (counts) from the cutBookkeeper groups
+
+    Returns
+    -------
+    np.ndarray
+        Array with the summed variables for the file
+    """
+    dtype = counts.dtype
+    summed = np.zeros((), dtype=dtype)
+    for field in dtype.names:
+        summed[field] = counts[field].sum()
+    return summed
 
 
 
