@@ -18,7 +18,9 @@ def getH5File(fileName):
             cache_type="readahead").open()
     hf = h5py.File(f, 'r') 
   else: 
-    hf = h5py.File(fileName, 'r') 
+    hf = h5py.File(fileName, 'r')
+  
+  return hf
 
 # fsspec also works with direct files 
 # Try with direct file 
