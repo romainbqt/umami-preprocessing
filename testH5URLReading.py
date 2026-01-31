@@ -24,7 +24,7 @@ def getH5File(fileName):
 
 # fsspec also works with direct files 
 # Try with direct file 
-fileName= "/home/rbouquet/eos/umamiTest/inputs/user.treisch.601589.e8547_s3797_r13144_p7085.tdd.GN3_dev.25_2_76.26-01-07_CentralDump_p7085_output.h5/user.treisch.48141599._000002.output.h5"
+# fileName= "/home/rbouquet/eos/umamiTest/inputs/user.treisch.601589.e8547_s3797_r13144_p7085.tdd.GN3_dev.25_2_76.26-01-07_CentralDump_p7085_output.h5/user.treisch.48141599._000002.output.h5"
 
 # fileName= "root://ccxrootdatlas.in2p3.fr:1094//pnfs/in2p3.fr/data/atlas/atlaslocalgroupdisk/rucio/user/treisch/6b/2e/user.treisch.48141599._000002.output.h5"
 # fileName= "root://sedoor1.bfg.uni-freiburg.de:1094//pnfs/bfg.uni-freiburg.de/data/atlaslocalgroupdisk/rucio/user/treisch/6b/2e/user.treisch.48141599._000002.output.h5"
@@ -37,4 +37,11 @@ fileName= "/home/rbouquet/eos/umamiTest/testVDS.h5"
 
 with getH5File(fileName) as f: 
   print(list(f.keys()))
+  jets = f["jets"]
   
+  count = 0 
+  for i in jets: 
+    count+=1
+    print(i)
+    if count > 3: 
+      break 
