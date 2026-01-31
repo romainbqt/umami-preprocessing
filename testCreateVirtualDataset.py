@@ -27,7 +27,7 @@ print(common_groups)
 common_groups.discard("cutBookkeeper")
 
 # Check that the directory of the output file exists
-out_fname.parent.mkdir(parents=True, exist_ok=True)
+# out_fname.parent.mkdir(parents=True, exist_ok=True)
 
 # Build the output file
 with h5py.File(out_fname, "w") as fout:
