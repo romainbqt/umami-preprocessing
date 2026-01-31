@@ -35,6 +35,8 @@ def main():
   ]
 
   out_fname = "/home/rbouquet/eos/umamiTest/testVDS.h5"
+  
+  bookkeeper_name "cutBookkeeper"
 
 
   # Identify common groups across all files
