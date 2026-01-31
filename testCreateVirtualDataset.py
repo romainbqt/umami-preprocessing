@@ -15,7 +15,8 @@ def getH5File(fileName):
 
   if isRemoteFile: 
     # Open via protocol hence using fsspec 
-    f = fsspec.open(fileName, "rb").open()
+    f = fsspec.open(fileName, "rb", block_size=8 * 1024 * 1024,
+            cache_type="readahead").open()
     hf = h5py.File(f, 'r') 
   else: 
     hf = h5py.File(fileName, 'r') 
