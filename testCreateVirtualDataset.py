@@ -20,8 +20,6 @@ def getH5File(fileName):
   else: 
     hf = h5py.File(fileName, 'r') 
   
-  
-  print(hf)
   return hf
 
 
