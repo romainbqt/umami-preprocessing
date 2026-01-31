@@ -35,8 +35,10 @@ def getH5File(fileName):
 # Virtual Dataset file created with the testCreateVirtualDataset.py file 
 fileName= "/home/rbouquet/eos/umamiTest/testVDS.h5"
 
-with getH5File(fileName) as f: 
+with getH5File(fileName) as f:
+  print("="*60) 
   print(list(f.keys()))
+  print("="*60) 
   jets = f["jets"]
   
   count = 0 
