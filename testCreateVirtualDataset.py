@@ -37,9 +37,10 @@ with h5py.File(out_fname, "w") as fout:
         fout.create_virtual_dataset(gname, layout)
 
         # Copy first-file attributes to VDS root object
-        with h5py.File(fnames[0], "r") as f0:
-            for k, v in f0[gname].attrs.items():
-                fout[gname].attrs[k] = v
+        with fsspec.open(fnames[0], "rb") as fs0:
+          with h5py.File(fs0, 'r') as f0:
+              for k, v in f0[gname].attrs.items():
+                  fout[gname].attrs[k] = v
 
     # Build the cutBookkeeper
     counts_total = aggregate_cutbookkeeper(fnames=fnames, group_name=bookkeeper_name)
