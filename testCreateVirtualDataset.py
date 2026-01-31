@@ -45,28 +45,27 @@ def main():
   # Ditch the bookkeeper. We will process it separately
   common_groups.discard("cutBookkeeper")
 
-  # Check that the directory of the output file exists
-  # out_fname.parent.mkdir(parents=True, exist_ok=True)
+  Check that the directory of the output file exists
+  out_fname.parent.mkdir(parents=True, exist_ok=True)
 
-  # # Build the output file
-  # with h5py.File(out_fname, "w") as fout:
-  #     # Build "standard" groups
-  #     for gname in sorted(common_groups):
-  #         layout = get_virtual_layout(fnames, gname)
-  #         fout.create_virtual_dataset(gname, layout)
+  # Build the output file
+  with h5py.File(out_fname, "w") as fout:
+      # Build "standard" groups
+      for gname in sorted(common_groups):
+          layout = get_virtual_layout(fnames, gname)
+          fout.create_virtual_dataset(gname, layout)
 
-  #         # Copy first-file attributes to VDS root object
-  #         with fsspec.open(fnames[0], "rb") as fs0:
-  #           with h5py.File(fs0, 'r') as f0:
-  #               for k, v in f0[gname].attrs.items():
-  #                   fout[gname].attrs[k] = v
+          # Copy first-file attributes to VDS root object
+          with getH5File(fnames[0]) as f0 
+              for k, v in f0[gname].attrs.items():
+                  fout[gname].attrs[k] = v
 
-  #     # Build the cutBookkeeper
-  #     counts_total = aggregate_cutbookkeeper(fnames=fnames, group_name=bookkeeper_name)
-  #     if counts_total is not None:
-  #         for sg, record in counts_total.items():
-  #             grp = fout.require_group(f"{bookkeeper_name}/{sg}")
-  #             grp.create_dataset("counts", data=record, shape=(), dtype=record.dtype)
+      # Build the cutBookkeeper
+      counts_total = aggregate_cutbookkeeper(fnames=fnames, group_name=bookkeeper_name)
+      if counts_total is not None:
+          for sg, record in counts_total.items():
+              grp = fout.require_group(f"{bookkeeper_name}/{sg}")
+              grp.create_dataset("counts", data=record, shape=(), dtype=record.dtype)
 
 
 # Functions below are adaptaed from the vds.py file 
