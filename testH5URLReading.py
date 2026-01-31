@@ -32,6 +32,7 @@ fileName= "/home/rbouquet/eos/umamiTest/inputs/user.treisch.601589.e8547_s3797_r
 
 # fileName= "davs://grid03.ge.infn.it:8443/webdav/atlaslocalgroupdisk/rucio/user/treisch/6b/2e/user.treisch.48141599._000002.output.h5"
 
+# Virtual Dataset file created with the testCreateVirtualDataset.py file 
 fileName= "/home/rbouquet/eos/umamiTest/testVDS.h5"
 
 with getH5File(fileName) as f: 
