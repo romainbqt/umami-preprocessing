@@ -56,7 +56,7 @@ def main():
           fout.create_virtual_dataset(gname, layout)
 
           # Copy first-file attributes to VDS root object
-          with getH5File(fnames[0]) as f0 
+          with getH5File(fnames[0]) as f0:
               for k, v in f0[gname].attrs.items():
                   fout[gname].attrs[k] = v
 
@@ -118,6 +118,50 @@ def aggregate_cutbookkeeper(
                     accum[sg][fld] += per_file[fld]
 
     return accum
+
+def get_virtual_layout(fnames: list[str], group: str) -> h5py.VirtualLayout:
+    """Concatenate group from multiple files into a single VirtualDataset.
+
+    Parameters
+    ----------
+    fnames : list[str]
+        List with the file names
+    group : str
+        Name of the group that is concatenated
+
+    Returns
+    -------
+    h5py.VirtualLayout
+        Virtual layout of the new virtual dataset
+    """
+    sources = []
+    total = 0
+
+    # Loop over the input files
+    for fname in fnames:
+        with getH5File(fname) as f:
+            # Get the file and append its length
+            vsrc = h5py.VirtualSource(f[group])
+            total += vsrc.shape[0]
+            sources.append(vsrc)
+
+    # Define the layout of the output vds
+    with getH5File(fnames[0]) as f:
+        dtype = f[group].dtype
+        shape = f[group].shape
+
+    # Update the shape finalize the output layout
+    shape = (total, *shape[1:])
+    layout = h5py.VirtualLayout(shape=shape, dtype=dtype)
+
+    # Fill the vds
+    idx = 0
+    for vsrc in sources:
+        length = vsrc.shape[0]
+        layout[idx : idx + length] = vsrc
+        idx += length
+
+    return layout
 
 def check_subgroups(fnames: list[str], group_name: str = "cutBookkeeper") -> list[str]:
     """Check which subgroups are available for the bookkeeper.
