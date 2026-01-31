@@ -15,7 +15,7 @@ def getH5File(fileName):
 
   if isRemoteFile: 
     # Open via protocol hence using fsspec 
-    f = fsspec.open(fileName, "rb")
+    f = fsspec.open(fileName, "rb").open()
     hf = h5py.File(f, 'r') 
   else: 
     hf = h5py.File(fileName, 'r') 
