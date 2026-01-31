@@ -34,5 +34,5 @@ fileName= "davs://grid03.ge.infn.it:8443/webdav/atlaslocalgroupdisk/rucio/user/t
 
 
 with getH5File(fileName) as f: 
-  print(list(hf.keys()))
+  print(list(f.keys()))
   
