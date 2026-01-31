@@ -30,10 +30,16 @@ def main():
   #   "root://ccxrootdatlas.in2p3.fr:1094//pnfs/in2p3.fr/data/atlas/atlaslocalgroupdisk/rucio/user/treisch/6b/2e/user.treisch.48141599._000002.output.h5"
   # ]
   
+  # fnames = [
+  #     "root://sedoor1.bfg.uni-freiburg.de:1094//pnfs/bfg.uni-freiburg.de/data/atlaslocalgroupdisk/rucio/user/treisch/26/21/user.treisch.48141599._000001.output.h5",
+  #     "root://sedoor1.bfg.uni-freiburg.de:1094//pnfs/bfg.uni-freiburg.de/data/atlaslocalgroupdisk/rucio/user/treisch/6b/2e/user.treisch.48141599._000002.output.h5"
+  # ]
+  
   fnames = [
-      "root://sedoor1.bfg.uni-freiburg.de:1094//pnfs/bfg.uni-freiburg.de/data/atlaslocalgroupdisk/rucio/user/treisch/26/21/user.treisch.48141599._000001.output.h5",
-      "root://sedoor1.bfg.uni-freiburg.de:1094//pnfs/bfg.uni-freiburg.de/data/atlaslocalgroupdisk/rucio/user/treisch/6b/2e/user.treisch.48141599._000002.output.h5"
+      "davs://grid03.ge.infn.it:8443/webdav/atlaslocalgroupdisk/rucio/user/treisch/26/21/user.treisch.48141599._000001.output.h5 ",
+      "davs://grid03.ge.infn.it:8443/webdav/atlaslocalgroupdisk/rucio/user/treisch/6b/2e/user.treisch.48141599._000002.output.h5"
   ]
+  
   
   # fnames = [
   #   "/home/rbouquet/eos/umamiTest/inputs/user.treisch.601589.e8547_s3797_r13144_p7085.tdd.GN3_dev.25_2_76.26-01-07_CentralDump_p7085_output.h5/user.treisch.48141599._000002.output.h5", 
@@ -64,6 +70,7 @@ def main():
   with h5py.File(out_fname, "w") as fout:
       # Build "standard" groups
       for gname in sorted(common_groups):
+          print(gname)
           layout = get_virtual_layout(fnames, gname)
           fout.create_virtual_dataset(gname, layout)
 
