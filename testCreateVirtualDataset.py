@@ -197,7 +197,7 @@ def check_subgroups(fnames: list[str], group_name: str = "cutBookkeeper") -> lis
     """
     common: set[str] | None = None
     for fname in fnames:
-        with h5py.File(fname, "r") as f:
+        with getH5File(fname) as f:
             if group_name not in f:
                 raise KeyError(f"{fname} has no '{group_name}' group")
             these = {
